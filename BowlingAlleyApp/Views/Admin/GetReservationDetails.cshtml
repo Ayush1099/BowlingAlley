@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BowlingAlleyApp.Models.Reservations>
+@{
+    ViewData["Title"] = "GetReservationDetails";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>GetReservationDetails</h1>
+
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservedOn)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.SlotId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservationId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservedOn)
+                </td>                
+                <td>
+                    @Html.DisplayFor(modelItem => item.SlotId)
+                </td>
+                <td>
+                    @Html.ActionLink("Approve", "Approve", item)
+                    |
+                    @Html.ActionLink("Reject", "Reject", item)
+                    @*@Html.ActionLink("Book Slot", "BookSlots", new { id = item.SlotId, startTime= item.SlotStartTime, endTime=item.SlotEndTime}) |*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

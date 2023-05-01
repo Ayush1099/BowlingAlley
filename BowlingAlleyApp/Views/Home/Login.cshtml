@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <form class="form-horizontal" asp-action="CheckRole">
+                <div class="form-group">
+                    <label class="control-label">EmpName</label>
+                    <input name="empname" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">EmpId</label>
+                    <input name="empid" class="form-control" type="password" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Login" id="btnLogin" />
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<BowlingAlleyApp.Models.ReservationDetails>
+@{
+    ViewData["Title"] = "GetRejectedSlots";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>GetRejectedSlots</h1>
+
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SlotId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SlotStartTime)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.SlotEndTime)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.EmpName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservationId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SlotId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SlotStartTime)
+                </td>                
+                <td>
+                    @Html.DisplayFor(modelItem => item.SlotEndTime)
+                </td>                
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmpName)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
